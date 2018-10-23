@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= f.label :rent %>
-    <%= f.number_field :rent %>
+    <%= f.text_field :rent, min: 1 %>
   </div>
 
   <div class="field">
@@ -28,12 +28,30 @@
 
   <div class="field">
     <%= f.label :age %>
-    <%= f.number_field :age %>
+    <%= f.number_field :age, min: 1 %>
   </div>
 
   <div class="field">
     <%= f.label :notes %>
     <%= f.text_area :notes %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nearest_stations %>
+    <%= f.fields_for :nearest_stations do |ff| %>
+      <div class="field">
+        <%= ff.label :line %>
+        <%= ff.text_field :line %>
+      </div>
+      <div class="field">
+        <%= ff.label :name %>
+        <%= ff.text_field :name %>
+      </div>
+      <div class="field">
+        <%= ff.label :minute_walk %>
+        <%= ff.number_field :minute_walk %>
+      </div>
+    <% end %>
   </div>
 
   <div class="actions">

@@ -61,7 +61,7 @@ class BuildingsController < ApplicationController
                                        :address, 
                                        :age, 
                                        :notes, 
-                                       :nearest_stations_attributes: %w(:line :name :minute_walk)
+                                       nearest_stations_attributes: %w(:id :line :name :minute_walk)
                                 )
     end
 end
