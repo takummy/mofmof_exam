@@ -3,5 +3,5 @@ class NearestStation < ApplicationRecord
 
   validates :line,        presence: true
   validates :name,        presence: true
-  validates :minute_walk, presence: true
+  validates :minute_walk, presence: true, numericality: {only_integer: true, greater_than: 1}
 end

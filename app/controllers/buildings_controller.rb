@@ -10,7 +10,7 @@ class BuildingsController < ApplicationController
 
   def new
     @building = Building.new
-    @building.nearest_stations.build
+    2.times { @building.nearest_stations.build }
   end
 
   def edit
