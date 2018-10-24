@@ -37,13 +37,14 @@
   </div>
 
   <div class="nested-field">
-    <%= f.fields_for :nearest_stations do |nest| %>
+    <%= f.nested_fields_for :nearest_stations do |nest| %>
       <% @i += 1 %>
       <%= render 'nearest_stations_fields', f: nest, i: @i %>
     <% end %>
   </div>
 
   <div class="actions">
+    <%= f.add_nested_fields_link :nearest_stations, "追加" %>
     <%= f.submit "登録する" %>
   </div>
 <% end %>

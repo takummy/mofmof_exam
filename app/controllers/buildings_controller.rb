@@ -11,7 +11,7 @@ class BuildingsController < ApplicationController
 
   def new
     @building = Building.new
-    2.times{@building.nearest_stations.build}
+    @building.nearest_stations.build
   end
 
   def edit
@@ -66,7 +66,7 @@ class BuildingsController < ApplicationController
                                        :address, 
                                        :age, 
                                        :notes, 
-                                       nearest_stations_attributes: %i(id line name minute_walk)
+                                       nearest_stations_attributes: %i(id line name minute_walk _destroy)
                                 )
     end
 end
