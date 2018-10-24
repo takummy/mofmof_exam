@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Buildings</h1>
+<h1>物件一覧</h1>
 
 <table>
   <thead>
@@ -18,13 +18,13 @@
     <% @buildings.each do |building| %>
       <tr>
         <td><%= building.name %></td>
-        <td><%= building.rent %></td>
+        <td><%= building.rent %><br>円</td>
         <td><%= building.address %></td>
-        <td><%= building.age %></td>
+        <td><%= building.age %><br>年</td>
         <td><%= building.notes %></td>
-        <td><%= link_to 'Show', building %></td>
-        <td><%= link_to 'Edit', edit_building_path(building) %></td>
-        <td><%= link_to 'Destroy', building, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', building %></td>
+        <td><%= link_to '編集', edit_building_path(building) %></td>
+        <td><%= link_to '削除', building, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Building', new_building_path %>
+<%= link_to '物件を登録する', new_building_path %>

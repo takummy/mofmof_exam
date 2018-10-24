@@ -37,13 +37,13 @@
   </div>
 
   <div class="nested-field">
-    <h2><%= f.label :nearest_stations %></h2>
     <%= f.fields_for :nearest_stations do |nest| %>
-      <%= render 'nearest_stations_fields', f: nest %>
+      <% @i += 1 %>
+      <%= render 'nearest_stations_fields', f: nest, i: @i %>
     <% end %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "登録する" %>
   </div>
 <% end %>

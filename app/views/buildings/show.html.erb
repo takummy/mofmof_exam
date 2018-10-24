@@ -27,24 +27,10 @@
 
 <div class="stations-info">
   <% @building.nearest_stations.each do |station| %>
-    <div class="station-info">
-      <p>
-        <strong>Line:</strong>
-        <%= station.line %>
-      </p>
-
-      <p>
-        <strong>Name:</strong>
-        <%= station.name %>
-      </p>
-
-      <p>
-        <strong>Minute Walk</strong>
-        <%= station.minute_walk %>
-      </p>
-    </div>
+    <% @i += 1 %>
+    <%= render "stations_info", station: station, i: @i %>
   <% end %>
 </div>
 
-<%= link_to 'Edit', edit_building_path(@building) %> |
-<%= link_to 'Back', buildings_path %>
+<%= link_to '編集', edit_building_path(@building) %> |
+<%= link_to '戻る', buildings_path %>

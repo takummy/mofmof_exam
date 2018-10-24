@@ -1,5 +1,6 @@
 class BuildingsController < ApplicationController
-  before_action :set_building, only: [:show, :edit, :update, :destroy]
+  before_action :set_building, only: %i(show edit update destroy)
+  before_action :set_index, only: %i(new show edit)
 
   def index
     @buildings = Building.all
@@ -10,7 +11,7 @@ class BuildingsController < ApplicationController
 
   def new
     @building = Building.new
-    2.times { @building.nearest_stations.build }
+    2.times{@building.nearest_stations.build}
   end
 
   def edit
@@ -55,13 +56,17 @@ class BuildingsController < ApplicationController
       @building = Building.find(params[:id])
     end
 
+    def set_index
+      @i = 0
+    end
+
     def building_params
       params.require(:building).permit(:name, 
                                        :rent, 
                                        :address, 
                                        :age, 
                                        :notes, 
-                                       nearest_stations_attributes: %w(:id :line :name :minute_walk)
+                                       nearest_stations_attributes: %i(id line name minute_walk)
                                 )
     end
 end
