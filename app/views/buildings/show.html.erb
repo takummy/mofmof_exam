@@ -25,5 +25,26 @@
   <%= @building.notes %>
 </p>
 
+<div class="stations-info">
+  <% @building.nearest_stations.each do |station| %>
+    <div class="station-info">
+      <p>
+        <strong>Line:</strong>
+        <%= station.line %>
+      </p>
+
+      <p>
+        <strong>Name:</strong>
+        <%= station.name %>
+      </p>
+
+      <p>
+        <strong>Minute Walk</strong>
+        <%= station.minute_walk %>
+      </p>
+    </div>
+  <% end %>
+</div>
+
 <%= link_to 'Edit', edit_building_path(@building) %> |
 <%= link_to 'Back', buildings_path %>

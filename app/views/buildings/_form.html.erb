@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= f.label :rent %>
-    <%= f.text_field :rent, min: 1 %>
+    <%= f.text_field :rent, min: 1 %>円
   </div>
 
   <div class="field">
@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= f.label :age %>
-    <%= f.number_field :age, min: 1 %>
+    <%= f.number_field :age, min: 1 %>年
   </div>
 
   <div class="field">
@@ -36,21 +36,10 @@
     <%= f.text_area :notes %>
   </div>
 
-  <div class="field">
-    <%= f.label :nearest_stations %>
-    <%= f.fields_for :nearest_stations do |ff| %>
-      <div class="field">
-        <%= ff.label :line %>
-        <%= ff.text_field :line %>
-      </div>
-      <div class="field">
-        <%= ff.label :name %>
-        <%= ff.text_field :name %>
-      </div>
-      <div class="field">
-        <%= ff.label :minute_walk %>
-        <%= ff.number_field :minute_walk, min: 1 %>
-      </div>
+  <div class="nested-field">
+    <h2><%= f.label :nearest_stations %></h2>
+    <%= f.fields_for :nearest_stations do |nest| %>
+      <%= render 'nearest_stations_fields', f: nest %>
     <% end %>
   </div>
 
