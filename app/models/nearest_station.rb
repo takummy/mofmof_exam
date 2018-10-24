@@ -1,5 +1,5 @@
 class NearestStation < ApplicationRecord
-  belongs_to :building, inverse_of: :nearest_stations
+  belongs_to :building
 
   validates :line,        presence: true
   validates :name,        presence: true
