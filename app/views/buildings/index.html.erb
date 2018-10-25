@@ -17,7 +17,7 @@
   <tbody>
     <% @buildings.each do |building| %>
       <tr>
-        <td><%= building.name %></td>
+        <td><%= building.name %></td> 
         <td><%= number_with_delimiter(building.rent) %><br>円</td>
         <td><%= building.address %></td>
         <td><%= building.age %><br>年</td>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to '物件を登録する', new_building_path %>
+<%= link_to '物件を登録する', new_building_path, data: { turbolinks: false } %>
