@@ -44,7 +44,7 @@
   </div>
 
   <div class="actions">
-    <%= f.add_nested_fields_link :nearest_stations, "追加" %>
+    <%= f.add_nested_fields_link :nearest_stations, "追加", id: 'js-nested_fields_link' %>
     <%= f.submit new_or_edit %>
   </div>
 <% end %>
