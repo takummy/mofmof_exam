@@ -1,6 +1,6 @@
 class BuildingsController < ApplicationController
   before_action :set_building, only: %i(show edit update destroy)
-  before_action :set_index, only: %i(new show edit update)
+  before_action :set_index, only: %i(new create show edit update)
 
   def index
     @buildings = Building.all

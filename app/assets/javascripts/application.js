@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require autonumeric
 //= require nested_form_fields
 //= require turbolinks
 //= require_tree .

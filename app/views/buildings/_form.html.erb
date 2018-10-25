@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= f.label :rent %>
-    <%= f.text_field :rent, min: 1 %>円
+    <%= f.text_field :rent, min: 1, data: { autonumeric: true } %>円
   </div>
 
   <div class="field">

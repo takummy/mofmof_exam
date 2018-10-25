@@ -18,7 +18,7 @@
     <% @buildings.each do |building| %>
       <tr>
         <td><%= building.name %></td>
-        <td><%= building.rent %><br>円</td>
+        <td><%= number_with_delimiter(building.rent) %><br>円</td>
         <td><%= building.address %></td>
         <td><%= building.age %><br>年</td>
         <td><%= building.notes %></td>

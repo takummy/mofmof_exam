@@ -1,0 +1,1 @@
+$(".field").trigger('refresh_autonumeric');

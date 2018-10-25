@@ -39,6 +39,8 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (7.1.0)
+    autonumeric-rails (2.0.0.1)
+      jquery-rails (>= 2.0.2)
     builder (3.2.2)
     byebug (9.0.5)
     coffee-rails (4.2.1)
@@ -159,6 +161,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  autonumeric-rails
   byebug
   coffee-rails (~> 4.2)
   jbuilder (~> 2.5)
